@@ -1,3 +1,38 @@
+.header {
+  padding: 0;
+  margin: 0;
+  background: #a50c0c;
+  border: solid 3px #a50c0c;
+  display: flex;
+  justify-content: space-between; /* 左右に要素を配置 */
+  align-items: flex-start; /* 上に揃える */
+  height: 100px;
+  box-sizing: border-box; /* padding と border を含めた高さを適用 */
+  padding: 0 10px; /* ヘッダー内の左右の余白を追加 */
+}
+
+.header .header_logo {
+  display: flex;
+  align-items: flex-start; /* ロゴの縦位置を上に配置 */
+}
+
+.header .header_logo img {
+  width: auto; /* 自動幅 */
+  height: 100%; /* ヘッダーの高さに合わせる */
+  max-height: 70px; /* 最大高さをヘッダーの高さに合わせる */
+}
+
+.header .menu {
+  display: flex;
+  align-items: flex-start; /* メニューの縦位置を上に配置 */
+}
+
+.header .menu img {
+  width: auto; /* 自動幅 */
+  height: 100%; /* ヘッダーの高さに合わせる */
+  max-height: 70px; /* 最大高さをヘッダーの高さに合わせる */
+}
+
 .field {
   display: flex;
   justify-content: center;
@@ -29,4 +64,34 @@ ul li, ol li {
   padding: 0.25em;
   margin: 40px 40px 40px 40px;
   list-style-type: none!important;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 100px; /* 小さい画面では高さを少し小さく */
+    padding: 0 5px; /* ヘッダー内の左右の余白を少し小さく */
+  }
+
+  .header .header_logo img {
+    max-height: 60px; /* ロゴの高さを調整 */
+  }
+
+  .header .menu img {
+    max-height: 60px; /* メニューアイコンの高さを調整 */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 90px;
+    padding: 0 5px; /* ヘッダー内の左右の余白を調整 */
+  }
+
+  .header .header_logo img {
+    max-height: 50px; /* ロゴの高さを調整 */
+  }
+
+  .header .menu img {
+    max-height: 50px; /* メニューアイコンの高さを調整 */
+  }
 }
