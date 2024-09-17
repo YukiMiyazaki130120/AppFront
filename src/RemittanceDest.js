@@ -6,10 +6,16 @@ import logo_3 from './Image/human3.png';
 import logo_4 from './Image/human4.png';
 import logo_5 from './Image/human5.png';
 import logo_6 from './Image/human6.png';
+import header_logo from './Image/icon.png';
+import menu from './Image/menu.png';
 
 function RemittanceDest() {
   return (
     <div>
+      <div class="header">
+        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+      </div>
       <center>
         <div>
           <h1>送金相手を選択</h1>
