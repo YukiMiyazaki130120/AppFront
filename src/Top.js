@@ -1,7 +1,14 @@
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 import logo from './Image/human1.png';
 import './Top.css';
 
 function Top() {
+  const navigate = useNavigate()
+  const handleRemit = () => {
+    navigate('/RemittanceDest')
+}
+
   return (
 <div>
   <div class="flex">
@@ -13,6 +20,8 @@ function Top() {
     <div class="box2">
       <p>50000円</p>
     </div>
+
+  <Button onClick={handleRemit}>送金する</Button>
 </div>
 
 

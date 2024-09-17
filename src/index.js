@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import RemittanceDest from './RemittanceDest';
-import Top from './Top';
+
 
 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-      <Top />
-    </React.StrictMode>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+
 );
 
 reportWebVitals();
