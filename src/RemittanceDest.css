@@ -1,4 +1,32 @@
 .field {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100px; 
+  height: auto; 
+  margin-left: -40px; 
+}
+
+p {
+  font-size: 24px; 
+}
+
+ul, ol {
+  padding: 0;
+  position: relative;
+}
+
+ul li, ol li {
+  color: #dd2d2d;
+  font-weight: bold;
+  border-left: solid 6px #dd2d2d;
+  background: #fff1f1;
+  margin-bottom: 3px;
+  line-height: 1.5;
+  padding: 0.25em;
+  margin: 40px 40px 40px 40px;
+  list-style-type: none!important;
 }
