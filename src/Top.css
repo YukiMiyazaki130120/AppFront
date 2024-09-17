@@ -1,0 +1,46 @@
+.flex {
+  display: flex; /*横並び*/
+  align-items: center;
+}
+
+.flex .image {
+  width: 320px; /*画像サイズ指定*/
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.flex .text {
+  font-size: 36px;
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+.box2 {
+  padding: 0.5em 1em;
+  margin: 2em 4em;
+  font-weight: bold;
+  color: #4f5050;/*文字色*/
+  background: #FFF;
+  border: solid 3px #4770a5;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+.box2 p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+h2 {
+  font-size: 36px;
+  text-align:center;
+  padding:20px 0;
+}
+
+
+h3 {
+  text-align:right;
+  padding:0 50px 0 0;
+}
