@@ -1,10 +1,16 @@
 import logo from './Image/human1.png';
 import logo2 from './Image/wallet.png';
+import header_logo from './Image/icon.png';
+import menu from './Image/menu.png';
 import './Top.css';
 
 function Top() {
   return (
     <div>
+      <div class="header">
+        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+      </div>
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
         <p class="text">サンプル　氏名</p>
