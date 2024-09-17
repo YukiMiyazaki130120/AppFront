@@ -5,7 +5,7 @@ function Top() {
   return (
 <div>
   <div class="flex">
-    <figure class="image"><img src={logo} className="App-logo" alt="logo" /></figure>
+    <figure class="image"><img src={logo}/></figure>
      <p class="text">サンプル　氏名</p>
   </div>
     <h2 class="text">口座番号</h2>
