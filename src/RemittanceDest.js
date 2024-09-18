@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 import logo_2 from './Image/human2.png';
 import logo_3 from './Image/human3.png';
 import logo_4 from './Image/human4.png';
@@ -12,6 +14,10 @@ import menu from './Image/menu.png';
 
 
 function RemittanceDest() {
+  const navigate = useNavigate()
+  const handleRemit = () => {
+    navigate('/Step4')
+  }
   return (
     <div>
       <div class="header">
@@ -26,7 +32,7 @@ function RemittanceDest() {
       
       <ul>
         <li>
-          <div class="field">
+          <div class="field" onClick={handleRemit}>
           <figure class="image"><img src={logo_2} /></figure>
             <p>サンプル氏名</p>
           </div>
