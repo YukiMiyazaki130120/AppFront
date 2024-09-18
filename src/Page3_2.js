@@ -1,7 +1,6 @@
 import { Button } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
-import logo from './Image/human1.png';
-import logo2 from './Image/wallet.png';
+import logo from './Image/human3.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Page3_2.css';
@@ -42,7 +41,7 @@ function Top() {
       <div class="Title">http://localhost:8000/Page3_3</div>
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
-        <p class="text">サンプル　氏名</p>
+        <p class="text">kikuti hanako</p>
       </div>
       <h3 class="text">送金上限額</h3>
       <div class="container">

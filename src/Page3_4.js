@@ -1,51 +1,69 @@
 import { Button } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import logo from './Image/approval.png';
-import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Page3_4.css';
-import axios from 'axios';
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Top() {
   const [menuVisible, setMenuVisible] = React.useState(false);
-  const navigate = useNavigate()
+  const [logoShaken, setLogoShaken] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // アニメーションを追加
+    setLogoShaken(true);
+    const timer = setTimeout(() => {
+      setLogoShaken(false);
+    }, 1000); 
+
+    return () => clearTimeout(timer); 
+  }, []);
+
   const handleRemit = () => {
-    navigate('/')
-  }
+    navigate('/');
+  };
   const GoHome = () => {
-    navigate('/')
-  }
+    navigate('/');
+  };
   const handleRemit_1 = () => {
-    navigate('/RemittanceDest')
-  }
+    navigate('/RemittanceDest');
+  };
   const handleRemit_2 = () => {
-    navigate('/Page3_1')
-  }
+    navigate('/Page3_1');
+  };
   const handleRemit_3 = () => {
-    navigate('/Page4')
-  }
+    navigate('/Page4');
+  };
   const handleSettings = () => {
     // Handle settings button click
   };
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
+
   return (
     <div>
-      <div class="header">
-        <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure class="menu" onClick={toggleMenu}><img src={menu} alt="メニュー画像"/></figure>
+      <div className="header">
+        <figure className="header_logo" onClick={GoHome}>
+          <img
+            src={header_logo}
+            alt="ロゴ画像"
+          />
+        </figure>
+        <figure className="menu" onClick={toggleMenu}>
+          <img src={menu} alt="メニュー画像" />
+        </figure>
       </div>
 
-      <div class="container">
-        <figure class="Image"><img src={logo} alt="ロゴ画像"/></figure>
-        <div class="Title_text">支払処理が完了しました</div>
+      <div className="container">
+        <figure className="Image"><img src={logo} alt="ロゴ画像" className={logoShaken ? "shake" : ""}/></figure>
+        <div className="Title_text">支払処理が完了しました</div>
 
-        <div class="p-test01">
-          <a class="btn" onClick={handleRemit}>
-            <div class="flex_2">トップ画面へ戻る</div>
+        <div className="p-test01">
+          <a className="btn" onClick={handleRemit}>
+            <div className="flex_2">トップ画面へ戻る</div>
           </a>
         </div>
       </div>
