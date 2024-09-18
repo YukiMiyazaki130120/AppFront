@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import logo from './Image/human1.png';
-import logo2 from './Image/wallet.png';
+import logo_2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Top.css';
@@ -13,6 +13,12 @@ function Top() {
   const navigate = useNavigate()
   const handleRemit = () => {
     navigate('/RemittanceDest')
+  }
+  const handleRemit_2 = () => {
+    navigate('/Page3_1')
+  }
+  const handleRemit_3 = () => {
+    navigate('/Page4')
   }
   /*
   axios.get('http://localhost:5000/')
@@ -43,7 +49,9 @@ function Top() {
         <div class="box2">
           <p>50000円</p>
         </div>
-        <Button onClick={handleRemit}>送金</Button>
+          <Button onClick={handleRemit}>送金</Button>
+          <Button onClick={handleRemit_2}>請求</Button>
+          <Button onClick={handleRemit_3}>請求履歴</Button>
       </div>
     </div>
   );

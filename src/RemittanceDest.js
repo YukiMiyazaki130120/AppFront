@@ -18,15 +18,18 @@ function RemittanceDest() {
   const handleRemit = () => {
     navigate('/Step4')
   }
+  const GoHome = () => {
+    navigate('/')
+  }
   return (
     <div>
       <div class="header">
-        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
         <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
       </div>
       <center>
         <div>
-          <h1>送金相手を選択</h1>
+        <div class="Title">送金相手を選択</div>
         </div>
       </center>
       

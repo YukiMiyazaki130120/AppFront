@@ -39,12 +39,6 @@
   align-items: center;
 }
 
-.image img {
-  max-width: 100px; 
-  height: auto; 
-  margin-left: -40px; 
-}
-
 p {
   font-size: 24px; 
 }
@@ -64,6 +58,24 @@ ul li, ol li {
   padding: 0.25em;
   margin: 40px 40px 40px 40px;
   list-style-type: none!important;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.flex-item {
+  background: orange;
+  border: 1px solid #000;
+  width: 50px;
+}
+
+.presenter{
+  max-width: 100px; 
+  height: auto; 
+  margin-left: 40px; 
 }
 
 @media screen and (max-width: 768px) {

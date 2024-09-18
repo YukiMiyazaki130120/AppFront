@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 import logo from './Image/approval.png';
 import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
@@ -5,6 +7,10 @@ import menu from './Image/menu.png';
 import './Page3_4.css';
 
 function Top() {
+  const navigate = useNavigate()
+  const handleRemit = () => {
+    navigate('/')
+  }
   return (
     <div>
       <div class="header">
@@ -16,7 +22,7 @@ function Top() {
         <figure class="Image"><img src={logo} alt="ロゴ画像"/></figure>
         <h2>支払処理が完了しました</h2>
         <div class="p-test01">
-          <a class="btn">
+          <a class="btn" onClick={handleRemit}>
             <div class="flex_2">トップ画面へ戻る</div>
           </a>
         </div>
