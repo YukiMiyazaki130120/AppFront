@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
-import logo from './Image/human1.png';
+import logo from './Image/human3.png';
 import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
