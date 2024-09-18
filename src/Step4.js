@@ -6,12 +6,14 @@ import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Step4.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Top() {
   const navigate = useNavigate()
 
   const [money, setState] = useState(0);
   const [errors, setErrors] = useState({});
+  const [menuVisible, setMenuVisible] = React.useState(false);
 
   const handleRemit = () => {
     if(money > 50000){
@@ -29,11 +31,26 @@ function Top() {
   const GoHome = () => {
     navigate('/')
   }
+  const handleRemit_1 = () => {
+    navigate('/RemittanceDest')
+  }
+  const handleRemit_2 = () => {
+    navigate('/Page3_1')
+  }
+  const handleRemit_3 = () => {
+    navigate('/Page4')
+  }
+  const handleSettings = () => {
+    // Handle settings button click
+  };
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
   return (
     <div>
       <div class="header">
         <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure class="menu"><img src={menu} alt="メニュー画像"/></figure>
+        <figure class="menu" onClick={toggleMenu}><img src={menu} alt="メニュー画像"/></figure>
       </div>
       <div class="Title_text">送金先</div>
       <div class="flex">
@@ -60,6 +77,15 @@ function Top() {
           </a>
         </div>
       </div>
+        {/* ハンバーガーメニューの実装 */}
+        {menuVisible && (
+        <div className="floating-menu">
+          <Button className="custom-btn" onClick={handleRemit_1}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>履歴</Button>
+          <Button className="custom-btn" onClick={handleSettings}>設定</Button>
+        </div>
+      )}
     </div>
   );
 }
