@@ -72,7 +72,7 @@ function Top() {
       </div>
       
       <div class="flex">
-        <figure class="image"><img src={filename} alt="ロゴ画像"/></figure>
+        <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
         <p class="text">{post.user_name}</p>
       </div>
       
