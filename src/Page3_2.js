@@ -20,13 +20,19 @@ function Top() {
         <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
         <figure class="menu"><img src={menu} alt="メニュー画像"/></figure>
       </div>
-      <div class="Title">請求リンクが作成されました</div>
-      <div class="Title">https://...</div>
+      <div class="Title_text">請求リンクが作成されました</div>
+      <div class="Title">http://localhost:8000/Page3_3</div>
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
         <p class="text">サンプル　氏名</p>
       </div>
       <h3 class="text">送金上限額</h3>
+      <div class="container">
+        <div class="box2">
+            <p>500000円</p>
+        </div>
+      </div>
+
 
       <div class="container">
         <div class="p-test01">

@@ -21,7 +21,7 @@ function Top() {
         <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
         <figure class="menu"><img src={menu} alt="メニュー画像"/></figure>
       </div>
-      <div class="Title">請求リンクの作成</div>
+      <div class="Title_text">請求リンクの作成</div>
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
         <p class="text">サンプル　氏名</p>
