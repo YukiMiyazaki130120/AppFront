@@ -50,7 +50,7 @@ function RemittanceDest() {
     <div class="Title_text">2023年3月分</div>
     <ul>
       <li>
-        <div class="flexbox">
+        <div class="resume_flexbox">
         <p>2023年3月30日</p>
           <p>5000円</p>
           <p>飲み会代お願いします！</p>
