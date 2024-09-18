@@ -6,11 +6,21 @@ import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Step5_complete.css';
 import axios from 'axios';
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Top() {
   const [menuVisible, setMenuVisible] = React.useState(false);
+  const [logoShaken, setLogoShaken] = useState(false);
   const navigate = useNavigate()
+  useEffect(() => {
+    // アニメーションを追加
+    setLogoShaken(true);
+    const timer = setTimeout(() => {
+      setLogoShaken(false);
+    }, 1000); 
+
+    return () => clearTimeout(timer); 
+  }, []);
   const handleRemit = () => {
     navigate('/')
   }
@@ -37,7 +47,7 @@ function Top() {
       </div>
 
       <div class="container">
-        <figure class="Image"><img src={logo} alt="ロゴ画像"/></figure>
+      <figure className="Image"><img src={logo} alt="ロゴ画像" className={logoShaken ? "shake" : ""}/></figure>
         <div class="Title_text">送金処理が完了しました</div>
         <div class="p-test01">
           <a class="btn" onClick={handleRemit}>
