@@ -7,70 +7,55 @@ import logo6 from './Image/human6.png';
 import './RemittanceDest.css';
 import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react'
 
+import header_logo from './Image/icon.png';
+import menu from './Image/menu.png';
+
+
 function RemittanceDest() {
   return (
     <div>
-      <Center m={"10px"}>
+      <div class="header">
+        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+      </div>
+      <center>
         <div>
-          <Text fontSize='4xl'>送金相手を選択</Text>
+          <h1>送金相手を選択</h1>
         </div>
-      </Center>
-
-      <Center>
-        <HStack>
-          <Image src={logo2}></Image>
-          <Text fontSize='2xl'>サンプル氏名</Text>
-        </HStack>
-      </Center>
-
-      <Center>
-        <HStack>
-          <Image src={logo3}></Image>
-          <Text fontSize='2xl'>サンプル氏名</Text>
-        </HStack>
-      </Center>
-      <Center>
-        <HStack>
-          <Image src={logo4}></Image>
-          <Text fontSize='2xl'>サンプル氏名</Text>
-        </HStack>
-      </Center>
-      <Center>
-        <HStack>
-          <Image src={logo5}></Image>
-          <Text fontSize='2xl'>サンプル氏名</Text>
-        </HStack>
-      </Center>
-      <Center>
-        <HStack>
-          <Image src={logo6}></Image>
-          <Text fontSize='2xl'>サンプル氏名</Text>
-        </HStack>
-      </Center>
+      </center>
       
-            
-      {/*
-      <div class="field">
-        <p>画像</p>
-        <p>サンプル氏名</p>
-      </div>
-      <div class="field">
-        <p>画像</p>
-        <p>サンプル氏名</p>
-      </div>
-      <div class="field">
-        <p>画像</p>
-        <p>サンプル氏名</p>
-      </div>
-      <div class="field">
-        <p>画像</p>
-        <p>サンプル氏名</p>
-      </div>
-      <div class="field">
-        <p>画像</p>
-        <p>サンプル氏名</p>
-      </div>
-      */}
+      <ul>
+        <li>
+          <div class="field">
+          <figure class="image"><img src={logo_2} /></figure>
+            <p>サンプル氏名</p>
+          </div>
+        </li>
+        <li>
+        <div class="field">
+          <figure class="image"><img src={logo_3} /></figure>
+          <p>サンプル氏名</p>
+        </div>
+        </li>
+        <li>
+        <div class="field">
+          <figure class="image"><img src={logo_4} /></figure>
+          <p>サンプル氏名</p>
+        </div>
+        </li>
+        <li>
+        <div class="field">
+          <figure class="image"><img src={logo_5} /></figure>
+          <p>サンプル氏名</p>
+        </div>
+        </li>
+        <li>
+        <div class="field">
+          <figure class="image"><img src={logo_6} /></figure>
+          <p>サンプル氏名</p>
+        </div>
+        </li>
+      </ul>
     </div>
   );
 }
