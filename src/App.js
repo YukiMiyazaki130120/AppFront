@@ -9,10 +9,10 @@ function App() {
   return (
     <ChakraProvider>
       <BrowserRouter>
-      <Routes>
-        <Route path={`/`} element={<Top />} />
-        <Route path={`/RemittanceDest`} element={<RemittanceDest />} />
-      </Routes>
+        <Routes>
+          <Route path={`/`} element={<Top />} />
+          <Route path={`/RemittanceDest`} element={<RemittanceDest />} />
+        </Routes>
       </BrowserRouter>
     </ChakraProvider>
   );

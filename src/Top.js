@@ -5,12 +5,26 @@ import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Top.css';
+//import axios from 'axios';
+
+
 
 function Top() {
   const navigate = useNavigate()
   const handleRemit = () => {
     navigate('/RemittanceDest')
-}
+  }
+  /*
+  axios.get('http://localhost:5000/')
+    .then(responce => {
+      const message = responce.data.message;
+      console.log(message);
+    })
+    .catch(error => {
+      console.error('リクエストエラー:', error);
+    });
+  */
+
 
   return (
     <div>
@@ -29,13 +43,7 @@ function Top() {
         <div class="box2">
           <p>50000円</p>
         </div>
-        <div class="p-test01">
-          <a class="btn">
-            <div class="flex_2">
-              <figure class="image"><img src={logo2} alt="ロゴ画像"/></figure>→送金する　　
-            </div>
-          </a>
-        </div>
+        <Button onClick={handleRemit}>送金</Button>
       </div>
     </div>
   );
