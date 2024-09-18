@@ -12,14 +12,19 @@ import React from "react";
 
 function Top() {
   const [post, setPost] = React.useState([]);
-  const [filename, setFilename] = React.useState("");
+  //const [filename, setFilename] = React.useState("");
+
+  // ロゴと image_path の対応を定義
+  const imageMap = {
+    "human1.png": logo
+  };
 
   
   React.useEffect(() => {
     axios.get('http://localhost:5000/top').then((response) => {
     setPost(response.data);
     console.log(response.data);
-    setFilename("/Image/" + response.data.image_path);
+    //setFilename("/Image/" + response.data.image_path);
     })
   }, []);
   
@@ -72,15 +77,15 @@ function Top() {
       </div>
       
       <div class="flex">
-        <figure class="image"><img src={filename} alt="ロゴ画像"/></figure>
-        <p class="text">サンプル　氏名</p>
+        <figure class="image"><img src={imageMap[post.image_path]} alt={post.user_name} /></figure>
+        <p class="text">{post.user_name}</p>
       </div>
       
       <h2 class="text">口座番号:  {post.account_num}</h2>
       <h3 class="text">預金残高</h3>
       <div class="container">
         <div class="box2">
-          <p>{post.balance}</p>
+          <p>{Math.floor(post.balance)} 円</p>
         </div>
           <Button onClick={handleRemit}>送金</Button>
           <Button onClick={handleRemit_2}>請求</Button>
