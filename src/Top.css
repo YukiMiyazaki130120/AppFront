@@ -182,6 +182,50 @@ h3 {
   color: #ffffff; /* 文字色を白に */
 }
 
+.floating-menu {
+  position: absolute;
+  top: 70px; 
+  right: 10px;
+  background-color: rgba(251, 241, 241, 0.969); 
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+
+.floating-menu button {
+  display: block;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 0px 100px;
+  background-color: transparent; 
+  color: #383030;
+  border: none; 
+  font-size: 24px; 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative; 
+}
+
+.floating-menu button:hover {
+  background-color: #b33434;
+  color: #ffffff;
+}
+
+.floating-menu button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #b33434; /* 横棒の色 */
+  position: absolute;
+  bottom: -10px; /* ボタンの下に表示 */
+  left: 0;
+}
+
+.floating-menu button:last-child::after {
+  display: none; /* 最後のボタンには横棒を表示しない */
+}
+
 @media screen and (max-width: 768px) {
   .header {
     height: 100px; /* 小さい画面では高さを少し小さく */

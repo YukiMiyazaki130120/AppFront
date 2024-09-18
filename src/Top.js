@@ -13,6 +13,7 @@ import React from "react";
 function Top() {
   const [post, setPost] = React.useState([]);
   const [filename, setFilename] = React.useState("");
+  const [menuVisible, setMenuVisible] = React.useState(false);
 
   
   React.useEffect(() => {
@@ -34,6 +35,12 @@ function Top() {
   const handleRemit_3 = () => {
     navigate('/Page4')
   }
+  const handleSettings = () => {
+    // Handle settings button click
+  };
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
   /*
   let data;
   axios.get('http://localhost:5000/top')
@@ -68,7 +75,7 @@ function Top() {
     <div>
       <div class="header">
         <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+        <figure class="menu" onClick={toggleMenu}><img src={menu} alt="ロゴ画像"/></figure>
       </div>
       
       <div class="flex">
@@ -85,9 +92,18 @@ function Top() {
         <div className="button-container">
           <Button className="custom-btn" onClick={handleRemit}>①送金</Button>
           <Button className="custom-btn" onClick={handleRemit_2}>②請求</Button>
-          <Button className="custom-btn" onClick={handleRemit_3}>③請求履歴</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>③履歴</Button>
         </div>
       </div>
+        {/* ハンバーガーメニューの実装 */}
+        {menuVisible && (
+        <div className="floating-menu">
+          <Button className="custom-btn" onClick={handleRemit}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>履歴</Button>
+          <Button className="custom-btn" onClick={handleSettings}>設定</Button>
+        </div>
+      )}
     </div>
   );
 }

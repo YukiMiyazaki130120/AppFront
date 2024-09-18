@@ -17,6 +17,7 @@ import menu from './Image/menu.png';
 function RemittanceDest() {
   const [post, setPost] = React.useState([]);
   const [filename, setFilename] = React.useState("");
+  const [menuVisible, setMenuVisible] = React.useState(false);
   
   React.useEffect(() => {
     axios.get('http://localhost:8000/RemittanceDest').then((response) => {
@@ -36,16 +37,31 @@ function RemittanceDest() {
   const GoHome = () => {
     navigate('/');
   };
+  const handleRemit_1 = () => {
+    navigate('/RemittanceDest')
+  }
+  const handleRemit_2 = () => {
+    navigate('/Page3_1')
+  }
+  const handleRemit_3 = () => {
+    navigate('/Page4')
+  }
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const handleSettings = () => {
+    // Handle settings button click
+  };
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
   };
 
   return (
     <div>
       <div className="header">
         <figure className="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure className="menu"><img src={menu} alt="ロゴ画像"/></figure>
+        <figure className="menu" onClick={toggleMenu}><img src={menu} alt="ロゴ画像"/></figure>
       </div>
       
       <center>
@@ -112,6 +128,16 @@ function RemittanceDest() {
         }}>
         ページトップへ
       </Button>
+
+      {/* ハンバーガーメニューの実装 */}
+      {menuVisible && (
+        <div className="floating-menu">
+          <Button className="custom-btn" onClick={handleRemit_1}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>履歴</Button>
+          <Button className="custom-btn" onClick={handleSettings}>設定</Button>
+        </div>
+      )}
     </div>
   );
 }
