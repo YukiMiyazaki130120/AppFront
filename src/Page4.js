@@ -24,7 +24,7 @@ function RemittanceDest() {
       <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
       <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
     </div>
-    <div class="Title">2023年3月分</div>
+    <div class="Title_text">2023年3月分</div>
     <ul>
       <li>
         <div class="flexbox">

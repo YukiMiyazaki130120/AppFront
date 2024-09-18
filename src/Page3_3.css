@@ -63,14 +63,20 @@ h1 {
   white-space: nowrap;
 }
 
-
-
-
 .container {
   display: flex;
   flex-direction: column;  
   align-items: center;      
   width: 100%;
+}
+
+h3.text {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0em;
+  text-align: left;  /* Left-align the headings */
+  width: 80%; /* Ensures the headings align with the boxes below */
+  max-width: 400px;
 }
 
 .box2,
@@ -101,9 +107,10 @@ h1 {
 
 .p-test01 {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Distribute space between buttons */
   align-items: center;
   height: 150px;
+  gap: 20px; /* Adds a 20px gap between buttons */
 }
 
 .flex_2 {
@@ -118,7 +125,7 @@ h1 {
   padding: 10px 20px;
   border: 3px solid rgb(152, 72, 72);
   border-radius: 10px;
-  background-color: transparent;
+  background-color: rgba(255, 0, 0, 0.1);
   color: #383030;
   text-decoration: none;
   font-size: 24px;

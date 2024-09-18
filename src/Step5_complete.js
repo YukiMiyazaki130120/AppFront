@@ -20,7 +20,7 @@ function Top() {
 
       <div class="container">
         <figure class="Image"><img src={logo} alt="ロゴ画像"/></figure>
-        <h2>送金処理が完了しました</h2>
+        <div class="Title_text">送金処理が完了しました</div>
         <div class="p-test01">
           <a class="btn" onClick={handleRemit}>
             <div class="flex_2" >トップ画面へ戻る</div>

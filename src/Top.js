@@ -16,7 +16,7 @@ function Top() {
 
   
   React.useEffect(() => {
-    axios.get('http://localhost:5000/top').then((response) => {
+    axios.get('http://localhost:8000/top').then((response) => {
     setPost(response.data);
     console.log(response.data);
     setFilename("/Image/" + response.data.image_path);
@@ -73,18 +73,20 @@ function Top() {
       
       <div class="flex">
         <figure class="image"><img src={filename} alt="ロゴ画像"/></figure>
-        <p class="text">サンプル　氏名</p>
+        <p class="text">{post.user_name}</p>
       </div>
       
-      <h2 class="text">口座番号:  {post.account_num}</h2>
+      <div class="Title_text">口座番号:  {post.account_num}</div>
       <h3 class="text">預金残高</h3>
       <div class="container">
         <div class="box2">
           <p>{post.balance}</p>
         </div>
-          <Button onClick={handleRemit}>送金</Button>
-          <Button onClick={handleRemit_2}>請求</Button>
-          <Button onClick={handleRemit_3}>請求履歴</Button>
+        <div className="button-container">
+          <Button className="custom-btn" onClick={handleRemit}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>請求履歴</Button>
+        </div>
       </div>
     </div>
   );

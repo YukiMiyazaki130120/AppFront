@@ -11,16 +11,20 @@ function Top() {
   const handleRemit = () => {
     navigate('/')
   }
+  const GoHome = () => {
+    navigate('/')
+  }
   return (
     <div>
       <div class="header">
-        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
         <figure class="menu"><img src={menu} alt="メニュー画像"/></figure>
       </div>
 
       <div class="container">
         <figure class="Image"><img src={logo} alt="ロゴ画像"/></figure>
-        <h2>支払処理が完了しました</h2>
+        <div class="Title_text">支払処理が完了しました</div>
+
         <div class="p-test01">
           <a class="btn" onClick={handleRemit}>
             <div class="flex_2">トップ画面へ戻る</div>
