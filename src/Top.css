@@ -9,7 +9,7 @@
   align-items: flex-start; /* 上に揃える */
   height: 100px;
   box-sizing: border-box; /* padding と border を含めた高さを適用 */
-  padding: 0 10px; /* ヘッダー内の左右の余白を追加 */
+  padding: 10px; /* ヘッダー内の左右の余白を追加 */
 }
 
 .header .header_logo {
@@ -23,6 +23,15 @@
   max-height: 70px; /* 最大高さをヘッダーの高さに合わせる */
 }
 
+.Home_text {
+  padding: 10px;
+  flex: 1; 
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center; 
+  font-size: 24px; 
+}
+
 .header .menu {
   display: flex;
   align-items: flex-start; /* メニューの縦位置を上に配置 */
@@ -33,6 +42,7 @@
   height: 100%; /* ヘッダーの高さに合わせる */
   max-height: 70px; /* 最大高さをヘッダーの高さに合わせる */
 }
+
 
 .flex {
   display: flex;
