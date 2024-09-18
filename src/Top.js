@@ -5,7 +5,7 @@ import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 import './Top.css';
-import axios from 'axios';
+//import axios from 'axios';
 
 
 
@@ -14,7 +14,7 @@ function Top() {
   const handleRemit = () => {
     navigate('/RemittanceDest')
   }
-
+  /*
   axios.get('http://localhost:5000/')
     .then(responce => {
       const message = responce.data.message;
@@ -23,6 +23,7 @@ function Top() {
     .catch(error => {
       console.error('リクエストエラー:', error);
     });
+  */
 
 
   return (
