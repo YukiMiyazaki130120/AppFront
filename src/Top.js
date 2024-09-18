@@ -83,9 +83,9 @@ function Top() {
           <p>{post.balance}</p>
         </div>
         <div className="button-container">
-          <Button className="custom-btn" onClick={handleRemit}>送金</Button>
-          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
-          <Button className="custom-btn" onClick={handleRemit_3}>請求履歴</Button>
+          <Button className="custom-btn" onClick={handleRemit}>①送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>②請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>③請求履歴</Button>
         </div>
       </div>
     </div>
