@@ -1,8 +1,8 @@
-import logo2 from './Image/human2.png';
-import logo3 from './Image/human3.png';
-import logo4 from './Image/human4.png';
-import logo5 from './Image/human5.png';
-import logo6 from './Image/human6.png';
+import logo_2 from './Image/human2.png';
+import logo_3 from './Image/human3.png';
+import logo_4 from './Image/human4.png';
+import logo_5 from './Image/human5.png';
+import logo_6 from './Image/human6.png';
 
 import './RemittanceDest.css';
 import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react'
