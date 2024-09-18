@@ -14,7 +14,7 @@ function Top() {
   return (
     <div>
       <div class="header">
-        <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure class="header_logo" onClick={handleRemit}><img src={header_logo} alt="ロゴ画像"/></figure>
         <figure class="menu"><img src={menu} alt="メニュー画像"/></figure>
       </div>
 

@@ -13,6 +13,12 @@
   padding: 0 10px; /* ヘッダー内の左右の余白を追加 */
 }
 
+.Title {
+  font-weight: bold;
+  font-size: 32px;
+  text-align:center;
+  padding:20px 0;
+}
 .header .header_logo {
   display: flex;
   align-items: flex-start; /* ロゴの縦位置を上に配置 */
@@ -34,6 +40,7 @@
   height: 100%; /* ヘッダーの高さに合わせる */
   max-height: 70px; /* 最大高さをヘッダーの高さに合わせる */
 }
+
 
 h1 {
   padding: 20px 20px;
@@ -63,16 +70,13 @@ h1 {
 }
 
 
+
+
 .container {
   display: flex;
   flex-direction: column;  
   align-items: center;      
   width: 100%;
-}
-.container .Image img{
-  margin: 20px 0px 40px 0px; 
-  max-width: 300px;
-  height: auto;
 }
 
 .box2,
@@ -132,6 +136,7 @@ h1 {
   color: #ffffff;
 }
 
+
 @media screen and (max-width: 768px) {
   .header {
     height: 100px; /* 小さい画面では高さを少し小さく */
@@ -161,5 +166,3 @@ h1 {
     max-height: 50px; /* メニューアイコンの高さを調整 */
   }
 }
-
-

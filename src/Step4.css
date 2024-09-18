@@ -146,7 +146,7 @@ h1 {
 
 @media screen and (max-width: 480px) {
   .header {
-    height: 90px;
+    height: 65px;
     padding: 0 5px; /* ヘッダー内の左右の余白を調整 */
   }
 

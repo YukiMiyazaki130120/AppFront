@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
 import logo from './Image/human1.png';
 import logo2 from './Image/wallet.png';
 import header_logo from './Image/icon.png';
@@ -5,6 +7,10 @@ import menu from './Image/menu.png';
 import './Page3_3.css';
 
 function Top() {
+  const navigate = useNavigate()
+  const handleRemit = () => {
+  navigate('/Page3_4')
+  }
   return (
     <div>
       <div class="header">
@@ -30,7 +36,7 @@ function Top() {
         <h3 class="text">メッセージ</h3>
         <input type="text" placeholder="" class="input-box" />
         <div class="p-test01">
-          <a class="btn">
+          <a class="btn" onClick={handleRemit}>
             <div class="flex_2">支払</div>
           </a>
         </div>
