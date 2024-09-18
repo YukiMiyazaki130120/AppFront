@@ -75,9 +75,10 @@ function Top() {
     <div>
       <div class="header">
         <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
+        <div class="Home_text">Home</div>
         <figure class="menu" onClick={toggleMenu}><img src={menu} alt="ロゴ画像"/></figure>
       </div>
-      
+    
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
         <p class="text">{post.user_name}</p>
