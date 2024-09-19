@@ -5,9 +5,11 @@ import logo_3 from './Image/human3.png';
 import logo_4 from './Image/human4.png';
 import logo_5 from './Image/human5.png';
 import logo_6 from './Image/human6.png';
+import axios from 'axios';
+import React from "react";
 
 import './RemittanceDest.css';
-import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react'
+import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react';
 
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
@@ -18,6 +20,7 @@ import React from "react";
 
 function RemittanceDest() {
   const [otherMember, setOtherMember] = React.useState([]);
+  const [menuVisible, setMenuVisible] = React.useState(false);
 
   // ロゴと image_path の対応を定義
   const imageMap = {
@@ -27,20 +30,8 @@ function RemittanceDest() {
     "human5.png": logo_5,
     "human6.png": logo_6
   };
-
-  /*
-  React.useEffect(() => {
-    axios.get('http://localhost:5000/RemittanceDest').then((response) => {
-    setOtherMember(response.data);
-    console.log(response.data);
-    //setFilename("/Image/" + response.data.image_path);
-    }).catch(error => {
-      console.log(error);
-    })
-  }, []);
-  */
-
-  ///
+  
+  
   React.useEffect(() => {
     axios.get('http://localhost:5000/RemittanceDest')
       .then((response) => {
@@ -62,20 +53,43 @@ function RemittanceDest() {
   const handleRemit = (member) => {
     navigate('/Step4', { state: { selectedMember: member } });
   };
+
+
   const GoHome = () => {
-    navigate('/')
+    navigate('/');
+  };
+  const handleRemit_1 = () => {
+    navigate('/RemittanceDest')
+  }
+  const handleRemit_2 = () => {
+    navigate('/Page3_1')
   }
 
 
+  const handleRemit_3 = () => {
+    navigate('/Page4')
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const handleSettings = () => {
+    // Handle settings button click
+  };
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
   return (
     <div>
-      <div class="header">
-        <figure class="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+      <div className="header">
+        <figure className="header_logo" onClick={GoHome}><img src={header_logo} alt="ロゴ画像"/></figure>
+        <figure className="menu" onClick={toggleMenu}><img src={menu} alt="ロゴ画像"/></figure>
       </div>
+      
       <center>
         <div>
-        <div class="Title">送金相手を選択</div>
+          <div className="Title_text">送金相手を選択</div>
         </div>
       </center>
 
@@ -90,61 +104,29 @@ function RemittanceDest() {
         ))}
       </ul>
 
-      {/*}
-      <div>
-        {
-          (function () {
-            const list = [];
-            for (let i = 0; i < 5; i++) {
-              list.push(<li>
-                <div class="field" onClick={handleRemit}>
-                <figure class="image"><img src={logo_2} /></figure>
-                  <p>{}</p>
-                </div>
-              </li>);
-            }
-            return <ul>{list}</ul>;
-          }())
-        }
-      </div>
-      */}
 
-      
-      {/*
-      <ul>
-        <li>
-          <div class="field" onClick={handleRemit}>
-          <figure class="image"><img src={logo_2} /></figure>
-            <p>サンプル氏名</p>
-          </div>
-        </li>
-        <li>
-        <div class="field">
-          <figure class="image"><img src={logo_3} /></figure>
-          <p>サンプル氏名</p>
-        </div>
-        </li>
-        <li>
-        <div class="field">
-          <figure class="image"><img src={logo_4} /></figure>
-          <p>サンプル氏名</p>
-        </div>
-        </li>
-        <li>
-        <div class="field">
-          <figure class="image"><img src={logo_5} /></figure>
-          <p>サンプル氏名</p>
-        </div>
-        </li>
-        <li>
-        <div class="field">
-          <figure class="image"><img src={logo_6} /></figure>
-          <p>サンプル氏名</p>
-        </div>
-        </li>
-      </ul>
-      */}
+      {/* ボタンを押すとページトップに*/}
+      <Button 
+        colorScheme="red" 
+        onClick={scrollToTop} 
+        style={{ 
+          position: 'fixed', 
+          bottom: '20px', 
+          right: '20px', 
+          zIndex: 1000 
+        }}>
+        ページトップへ
+      </Button>
 
+      {/* ハンバーガーメニューの実装 */}
+      {menuVisible && (
+        <div className="floating-menu">
+          <Button className="custom-btn" onClick={handleRemit_1}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>履歴</Button>
+          <Button className="custom-btn" onClick={handleSettings}>設定</Button>
+        </div>
+      )}
     </div>
   );
 }

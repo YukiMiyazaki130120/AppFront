@@ -13,6 +13,25 @@
   padding: 0 10px; /* ヘッダー内の左右の余白を追加 */
 }
 
+.Title {
+  font-size: 18px;
+  text-align: center;
+  word-wrap: break-word; 
+  margin: 0 20px; 
+}
+
+.Title_text {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  word-wrap: break-word; 
+  margin: 20px 20px; 
+}
+
+.Limit_text{
+  text-align: center;
+}
+
 .header .header_logo {
   display: flex;
   align-items: flex-start; /* ロゴの縦位置を上に配置 */
@@ -129,6 +148,8 @@ h1 {
   background-color: rgb(179, 52, 52);
   color: #ffffff;
 }
+
+
 
 @media screen and (max-width: 768px) {
   .header {

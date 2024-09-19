@@ -60,10 +60,16 @@ ul li, ol li {
   list-style-type: none!important;
 }
 
-.flexbox {
+.resume_flexbox {
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin: 10px 0;  
+  padding: 10px;
+}
+
+.resume_flexbox p {
+  margin: 5px 0; /* Adjust the vertical margin for paragraphs as needed */
 }
 
 .flex-item {

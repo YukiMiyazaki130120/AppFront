@@ -12,16 +12,17 @@ import React from "react";
 
 function Top() {
   const [post, setPost] = React.useState([]);
-  //const [filename, setFilename] = React.useState("");
 
   // ロゴと image_path の対応を定義
   const imageMap = {
     "human1.png": logo
   };
 
+  const [menuVisible, setMenuVisible] = React.useState(false);
+
   
   React.useEffect(() => {
-    axios.get('http://localhost:5000/top').then((response) => {
+    axios.get('http://localhost:8000/top').then((response) => {
     setPost(response.data);
     console.log(response.data);
     //setFilename("/Image/" + response.data.image_path);
@@ -39,6 +40,12 @@ function Top() {
   const handleRemit_3 = () => {
     navigate('/Page4')
   }
+  const handleSettings = () => {
+    // Handle settings button click
+  };
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
   /*
   let data;
   axios.get('http://localhost:5000/top')
@@ -73,24 +80,38 @@ function Top() {
     <div>
       <div class="header">
         <figure class="header_logo"><img src={header_logo} alt="ロゴ画像"/></figure>
-        <figure class="menu"><img src={menu} alt="ロゴ画像"/></figure>
+        <div class="Home_text">Home</div>
+        <figure class="menu" onClick={toggleMenu}><img src={menu} alt="ロゴ画像"/></figure>
       </div>
-      
+    
       <div class="flex">
+
         <figure class="image"><img src={imageMap[post.image_path]} alt={post.user_name} /></figure>
+
         <p class="text">{post.user_name}</p>
       </div>
       
-      <h2 class="text">口座番号:  {post.account_num}</h2>
+      <div class="Title_text">口座番号:  {post.account_num}</div>
       <h3 class="text">預金残高</h3>
       <div class="container">
         <div class="box2">
           <p>{Math.floor(post.balance)} 円</p>
         </div>
-          <Button onClick={handleRemit}>送金</Button>
-          <Button onClick={handleRemit_2}>請求</Button>
-          <Button onClick={handleRemit_3}>請求履歴</Button>
+        <div className="button-container">
+          <Button className="custom-btn" onClick={handleRemit}>①送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>②請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>③履歴</Button>
+        </div>
       </div>
+        {/* ハンバーガーメニューの実装 */}
+        {menuVisible && (
+        <div className="floating-menu">
+          <Button className="custom-btn" onClick={handleRemit}>送金</Button>
+          <Button className="custom-btn" onClick={handleRemit_2}>請求</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>履歴</Button>
+          <Button className="custom-btn" onClick={handleSettings}>設定</Button>
+        </div>
+      )}
     </div>
   );
 }
