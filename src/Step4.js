@@ -42,7 +42,6 @@ function Step4() {
 
   
   const handleRemit = () => {
-    /*
     if (!amount) {
       alert("金額を入力してください");
       return;
@@ -62,7 +61,7 @@ function Step4() {
     };
 
     // axios の POST リクエスト
-    axios.post('http://localhost:5000/~', postData)
+    axios.post('http://localhost:5000/Step5_complete', postData)
       .then((response) => {
         console.log("送金成功:", response.data);
 
@@ -78,8 +77,7 @@ function Step4() {
         console.error("送金失敗:", error);
         alert("送金に失敗しました。もう一度お試しください。");
       });
-     */
-    navigate('/Step5_complete')
+    //navigate('/Step5_complete')
   }
 
 
