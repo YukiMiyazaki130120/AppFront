@@ -85,6 +85,8 @@ function Step4() {
         alert("送金に失敗しました。もう一度お試しください。");
       });
     //navigate('/Step5_complete')
+    }
+
 
     
 

@@ -22,7 +22,7 @@ function Top() {
 
   
   React.useEffect(() => {
-    axios.get('http://localhost:8000/top').then((response) => {
+    axios.get('http://localhost:5000/top').then((response) => {
     setPost(response.data);
     console.log(response.data);
     //setFilename("/Image/" + response.data.image_path);

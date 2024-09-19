@@ -14,9 +14,6 @@ import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 
-import axios from 'axios';
-import React from "react";
-
 
 function RemittanceDest() {
   const [otherMember, setOtherMember] = React.useState([]);
