@@ -71,6 +71,8 @@ function Top() {
         value={money}
         onChange={(e) => setState(e.target.value)}
         />  
+        <h3 class="text">メッセージ(任意)</h3>
+        <input type="text" placeholder="" class="input-box" />
         <div class="p-test01">
           <a class="btn" onClick={handleRemit}>
             <div class="flex_2">送金</div>
