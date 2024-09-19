@@ -41,7 +41,7 @@ function Top() {
       <div class="Title_text">請求リンクの作成</div>
       <div class="flex">
         <figure class="image"><img src={logo} alt="ロゴ画像"/></figure>
-        <p class="text">kikuti hanako</p>
+        <p class="text">菊池花子</p>
       </div>
       
 

@@ -100,7 +100,7 @@ function Top() {
         <div className="button-container">
           <Button className="custom-btn" onClick={handleRemit}>①送金</Button>
           <Button className="custom-btn" onClick={handleRemit_2}>②請求</Button>
-          <Button className="custom-btn" onClick={handleRemit_3}>③履歴</Button>
+          <Button className="custom-btn" onClick={handleRemit_3}>③送金履歴</Button>
         </div>
       </div>
         {/* ハンバーガーメニューの実装 */}

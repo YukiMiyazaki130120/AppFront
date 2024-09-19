@@ -94,7 +94,7 @@ function RemittanceDest() {
         {otherMember.map((member, index) => (
           <li key={index}>
             <div class="field" onClick={() => handleRemit(member)}>
-              <img src={imageMap[member.image_path]} alt={member.user_name} />
+              <figure className="image"><img src={imageMap[member.image_path]} alt={member.user_name} /></figure>
               <p>{member.user_name}</p>
             </div>
           </li>

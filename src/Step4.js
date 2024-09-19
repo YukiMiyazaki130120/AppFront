@@ -21,6 +21,8 @@ import React, {useState}  from "react";
 function Step4() {
   const [mybank, setMybank] = React.useState([]);
   const [amount, setAmount] = useState(''); // 金額を格納するstate
+  const [message, setMessage] = useState(''); //任意メッセージを格納
+
   const [menuVisible, setMenuVisible] = React.useState(false);
   const location = useLocation();
   const { selectedMember } = location.state || {}; //前ページから渡された selectedMember の情報を受け取る
@@ -64,7 +66,8 @@ function Step4() {
     const postData = {
       amount: amount,
       account_num: selectedMember.account_num,
-      user_name: selectedMember.user_name
+      user_name: selectedMember.user_name,
+      message: message
     };
 
     // axios の POST リクエスト
@@ -150,7 +153,7 @@ function Step4() {
         <input type="number" placeholder="金額を入力" class="input-box" value={amount} onChange={(e) => setAmount(e.target.value)}/>
 
         <h3 class="text">メッセージ(任意)</h3>
-        <input type="text" placeholder="" class="input-box" />
+        <input type="text" placeholder="" class="input-box" value={message} onChange={(e) => setMessage(e.target.value)}/>
 
         <div class="p-test01">
           <a class="btn" onClick={handleRemit}>
