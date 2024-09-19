@@ -14,25 +14,46 @@ import { Center, HStack, Spacer, Text, Image } from '@chakra-ui/react';
 import header_logo from './Image/icon.png';
 import menu from './Image/menu.png';
 
+import axios from 'axios';
+import React from "react";
+
+
 function RemittanceDest() {
-  const [post, setPost] = React.useState([]);
-  const [filename, setFilename] = React.useState("");
+  const [otherMember, setOtherMember] = React.useState([]);
   const [menuVisible, setMenuVisible] = React.useState(false);
+
+  // ロゴと image_path の対応を定義
+  const imageMap = {
+    "human2.png": logo_2,
+    "human3.png": logo_3,
+    "human4.png": logo_4,
+    "human5.png": logo_5,
+    "human6.png": logo_6
+  };
+  
   
   React.useEffect(() => {
-    axios.get('http://localhost:8000/RemittanceDest').then((response) => {
-      setPost(response.data);
-      console.log(response.data);
-      console.log(response.data[0]["user_name"]);
-      setFilename("/Image/" + response.data.image_path);
-    });
+    axios.get('http://localhost:5000/RemittanceDest')
+      .then((response) => {
+        setOtherMember(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
-  const navigate = useNavigate();
+  // otherMember が更新されるたびにログを出力
+  React.useEffect(() => {
+    console.log(otherMember);
+  }, [otherMember]);
 
-  const handleRemit = () => {
-    navigate('/Step4');
+  //ページ遷移
+  const navigate = useNavigate()
+  //選択された人の情報を持ちながら移動
+  const handleRemit = (member) => {
+    navigate('/Step4', { state: { selectedMember: member } });
   };
+
 
   const GoHome = () => {
     navigate('/');
@@ -43,6 +64,8 @@ function RemittanceDest() {
   const handleRemit_2 = () => {
     navigate('/Page3_1')
   }
+
+
   const handleRemit_3 = () => {
     navigate('/Page4')
   }
@@ -70,51 +93,17 @@ function RemittanceDest() {
         </div>
       </center>
 
-      <div>
-        {
-          (function () {
-            const list = [];
-            for (let i = 0; i < 5; i++) {
-              list.push(
-                <li key={i}>
-                  <div className="field" onClick={handleRemit}>
-                    <figure className="image"><img src={logo_3} alt="user logo" /></figure>
-                    <p>{post[i]?.user_name}</p>
-                  </div>
-                </li>
-              );
-            }
-            return <ul>{list}</ul>;
-          }())
-        }
-      </div>
-
       <ul>
-        <li>
-          <div className="field">
-            <figure className="image"><img src={logo_3} alt="サンプル" /></figure>
-            <p>サンプル氏名</p>
-          </div>
-        </li>
-        <li>
-          <div className="field">
-            <figure className="image"><img src={logo_4} alt="サンプル" /></figure>
-            <p>サンプル氏名</p>
-          </div>
-        </li>
-        <li>
-          <div className="field">
-            <figure className="image"><img src={logo_5} alt="サンプル" /></figure>
-            <p>サンプル氏名</p>
-          </div>
-        </li>
-        <li>
-          <div className="field">
-            <figure className="image"><img src={logo_6} alt="サンプル" /></figure>
-            <p>サンプル氏名</p>
-          </div>
-        </li>
+        {otherMember.map((member, index) => (
+          <li key={index}>
+            <div class="field" onClick={() => handleRemit(member)}>
+              <img src={imageMap[member.image_path]} alt={member.user_name} />
+              <p>{member.user_name}</p>
+            </div>
+          </li>
+        ))}
       </ul>
+
 
       {/* ボタンを押すとページトップに*/}
       <Button 
